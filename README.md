@@ -6,110 +6,96 @@
   <title>ร้านสายลม - ขายไอดี Identity V</title>
   <style>
     body {
-      font-family: sans-serif;
-      background: #f9f9f9;
+      font-family: 'Prompt', sans-serif;
+      background-color: #f8f8ff;
+      color: #333;
+      padding: 20px;
       margin: 0;
-      padding: 20px;
     }
+
     header {
-      background: #cceeff;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      color: #5c6bc0;
+      font-size: 36px;
+    }
+
+    .id-card {
+      background-color: #ffffff;
       padding: 20px;
-      text-align: center;
-      border-radius: 10px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      margin: auto;
     }
-    .product {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      padding: 15px;
-      margin: 20px 0;
-    }
-    .product img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-    .cart-button {
-      background: #22c55e;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      margin-top: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .contact {
-      margin-top: 30px;
-      text-align: center;
-    }
-    input, textarea {
+
+    .id-card img {
       width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 24px;
+      color: #e53935;
+      margin: 10px 0;
+    }
+
+    .details {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .contact a {
+      background-color: #4267B2;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>ร้านสายลม</h1>
-  <p>ขายไอดีเกม Identity V</p>
-</header>
+  <header>
+    <h1>ร้านสายลม</h1>
+    <p>ขายไอดีเกม Identity V</p>
+  </header>
 
-<h2>เพิ่มไอดีใหม่</h2>
-<form id="addProductForm">
-  <label>ชื่อไอดี:</label>
-  <input type="text" id="name" required>
+  <div class="id-card">
+    <img src="https://via.placeholder.com/500x300.png?text=รูปสกิน+ไอดี" alt="สกินไอดี">
+    <div class="price">ราคา: 2,200 บาท</div>
+    <div class="details">
+      <strong>สกิน:</strong> มีสกิน UR + SSR หลากหลาย<br>
+      <strong>ตัวละคร:</strong> ครบตัวหลัก พร้อมอัปเกรด<br>
+      <strong>อื่น ๆ:</strong> ผูกเมลแล้ว พร้อมเปลี่ยนเมลได้<br>
+    </div>
+  </div>
 
-  <label>รายละเอียด:</label>
-  <textarea id="description" required></textarea>
+  <div class="contact">
+    <a href="https://www.facebook.com/share/1AeBmdfGfA/" target="_blank">ทักแชททาง Facebook</a>
+  </div>
 
-  <label>ราคา (บาท):</label>
-  <input type="number" id="price" required>
-
-  <label>อัปโหลดรูปสกิน:</label>
-  <input type="file" id="image" accept="image/*" required>
-
-  <button type="submit" class="cart-button">เพิ่มไอดี</button>
-</form>
-
-<h2>สินค้าในร้าน</h2>
-<div id="productList"></div>
-
-<div class="contact">
-  <p>📞 ช่องทางติดต่อ: <a href="https://www.facebook.com/share/1AeBmdfGfA/" target="_blank">Facebook ร้านสายลม</a></p>
-</div>
-
-<script>
-  const productList = document.getElementById('productList');
-  const form = document.getElementById('addProductForm');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const desc = document.getElementById('description').value;
-    const price = document.getElementById('price').value;
-    const imageFile = document.getElementById('image').files[0];
-
-    const reader = new FileReader();
-    reader.onload = function(event) {
-      const newProduct = document.createElement('div');
-      newProduct.classList.add('product');
-      newProduct.innerHTML = `
-        <img src="${event.target.result}" alt="skin">
-        <h3>${name}</h3>
-        <p>${desc}</p>
-        <p><strong>ราคา:</strong> ${price} บาท</p>
-        <button class="cart-button">เพิ่มในตะกร้า</button>
-      `;
-      productList.appendChild(newProduct);
-      form.reset();
-    };
-    reader.readAsDataURL(imageFile);
-  });
-</script>
+  <footer>
+    © 2025 ร้านสายลม | จำหน่ายไอดีเกม Identity V
+  </footer>
 
 </body>
 </html>
