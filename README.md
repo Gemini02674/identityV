@@ -1,1 +1,55 @@
-# identityV
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ร้านขายไอดีเกม</title>
+  <style>
+    body { font-family: 'Prompt', sans-serif; margin: 0; background: #f9f9f9; color: #333; }
+    header { background: #5c6bc0; color: white; padding: 1rem; text-align: center; }
+    .container { padding: 1rem; max-width: 1000px; margin: auto; }
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    .card img { width: 100%; border-radius: 10px; }
+    .card h3 { margin: 0.5rem 0; }
+    .contact-btn {
+      background: #ff4081;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🌟 ร้านขายไอดีเกม by มัมมี่ 🌟</h1>
+  <p>ไอดีพร้อมขาย ราคาน่ารัก ทักได้เลยจ้า!</p>
+</header>
+
+<div class="container">
+  <div class="card">
+    <img src="https://via.placeholder.com/600x300?text=ID+Genshin+พร้อมขาย" alt="ไอดี Genshin Impact">
+    <h3>Genshin Impact - AR55 มี 15 ตัว 5★</h3>
+    <p>เชื่อมอีเมล ✔️ | พร้อมเปลี่ยนรหัส ✔️ | ราคา: 1,200 บาท</p>
+    <a href="https://line.me/ti/p/your-line-id" class="contact-btn" target="_blank">📲 ติดต่อแม่ค้า</a>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/600x300?text=ID+ROV+พร้อมขาย" alt="ไอดี ROV">
+    <h3>ROV - ฮีโร่ 80 สกินเยอะ</h3>
+    <p>Facebook ผูก ✔️ | พร้อมส่งมอบทันที | ราคา: 990 บาท</p>
+    <a href="https://facebook.com/messages/t/your-page" class="contact-btn" target="_blank">💬 ทักแชท Facebook</a>
+  </div>
+</div>
+
+</body>
+</html>
