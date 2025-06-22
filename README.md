@@ -2,54 +2,114 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ร้านขายไอดีเกม</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ร้านสายลม - ขายไอดี Identity V</title>
   <style>
-    body { font-family: 'Prompt', sans-serif; margin: 0; background: #f9f9f9; color: #333; }
-    header { background: #5c6bc0; color: white; padding: 1rem; text-align: center; }
-    .container { padding: 1rem; max-width: 1000px; margin: auto; }
-    .card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 1rem;
-      margin-bottom: 1rem;
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
     }
-    .card img { width: 100%; border-radius: 10px; }
-    .card h3 { margin: 0.5rem 0; }
-    .contact-btn {
-      background: #ff4081;
-      color: white;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
+    header {
+      background: #cceeff;
+      padding: 20px;
+      text-align: center;
       border-radius: 10px;
-      display: inline-block;
-      margin-top: 0.5rem;
+    }
+    .product {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      margin: 20px 0;
+    }
+    .product img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .cart-button {
+      background: #22c55e;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .contact {
+      margin-top: 30px;
+      text-align: center;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>🌟 ร้านขายไอดีเกม by มัมมี่ 🌟</h1>
-  <p>ไอดีพร้อมขาย ราคาน่ารัก ทักได้เลยจ้า!</p>
+  <h1>ร้านสายลม</h1>
+  <p>ขายไอดีเกม Identity V</p>
 </header>
 
-<div class="container">
-  <div class="card">
-    <img src="https://via.placeholder.com/600x300?text=ID+Genshin+พร้อมขาย" alt="ไอดี Genshin Impact">
-    <h3>Genshin Impact - AR55 มี 15 ตัว 5★</h3>
-    <p>เชื่อมอีเมล ✔️ | พร้อมเปลี่ยนรหัส ✔️ | ราคา: 1,200 บาท</p>
-    <a href="https://line.me/ti/p/your-line-id" class="contact-btn" target="_blank">📲 ติดต่อแม่ค้า</a>
-  </div>
+<h2>เพิ่มไอดีใหม่</h2>
+<form id="addProductForm">
+  <label>ชื่อไอดี:</label>
+  <input type="text" id="name" required>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/600x300?text=ID+ROV+พร้อมขาย" alt="ไอดี ROV">
-    <h3>ROV - ฮีโร่ 80 สกินเยอะ</h3>
-    <p>Facebook ผูก ✔️ | พร้อมส่งมอบทันที | ราคา: 990 บาท</p>
-    <a href="https://facebook.com/messages/t/your-page" class="contact-btn" target="_blank">💬 ทักแชท Facebook</a>
-  </div>
+  <label>รายละเอียด:</label>
+  <textarea id="description" required></textarea>
+
+  <label>ราคา (บาท):</label>
+  <input type="number" id="price" required>
+
+  <label>อัปโหลดรูปสกิน:</label>
+  <input type="file" id="image" accept="image/*" required>
+
+  <button type="submit" class="cart-button">เพิ่มไอดี</button>
+</form>
+
+<h2>สินค้าในร้าน</h2>
+<div id="productList"></div>
+
+<div class="contact">
+  <p>📞 ช่องทางติดต่อ: <a href="https://www.facebook.com/share/1AeBmdfGfA/" target="_blank">Facebook ร้านสายลม</a></p>
 </div>
+
+<script>
+  const productList = document.getElementById('productList');
+  const form = document.getElementById('addProductForm');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const desc = document.getElementById('description').value;
+    const price = document.getElementById('price').value;
+    const imageFile = document.getElementById('image').files[0];
+
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      const newProduct = document.createElement('div');
+      newProduct.classList.add('product');
+      newProduct.innerHTML = `
+        <img src="${event.target.result}" alt="skin">
+        <h3>${name}</h3>
+        <p>${desc}</p>
+        <p><strong>ราคา:</strong> ${price} บาท</p>
+        <button class="cart-button">เพิ่มในตะกร้า</button>
+      `;
+      productList.appendChild(newProduct);
+      form.reset();
+    };
+    reader.readAsDataURL(imageFile);
+  });
+</script>
 
 </body>
 </html>
