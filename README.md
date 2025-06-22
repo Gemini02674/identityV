@@ -1,3 +1,5 @@
+16:31
+คุณส่ง
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -83,7 +85,7 @@
     <img src="https://via.placeholder.com/500x300.png?text=รูปสกิน+ไอดี" alt="สกินไอดี">
     <div class="price">ราคา: 2,200 บาท</div>
     <div class="details">
-      <strong>สกิน:</strong> มีสกิน UR + SSR หลากหลาย<br>
+      <strong>สกิน:</strong> มีสกิน https://www.facebook.com/share/p/1HTcMRxooD/<br>
       <strong>ตัวละคร:</strong> ครบตัวหลัก พร้อมอัปเกรด<br>
       <strong>อื่น ๆ:</strong> ผูกเมลแล้ว พร้อมเปลี่ยนเมลได้<br>
     </div>
@@ -93,6 +95,12 @@
     <a href="https://www.facebook.com/share/1AeBmdfGfA/" target="_blank">ทักแชททาง Facebook</a>
   </div>
 
+  <footer>
+    © 2025 ร้านสายลม | จำหน่ายไอดีเกม Identity V
+  </footer>
+
+</body>
+</html>
   <footer>
     © 2025 ร้านสายลม | จำหน่ายไอดีเกม Identity V
   </footer>
